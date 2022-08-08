@@ -2,7 +2,7 @@ const numbers = document.querySelector("#controls>input");
 const create = document.querySelector("button[data-create]");
 const destroy = document.querySelector("button[data-destroy]");
 const boxElements = document.querySelector("#boxes");
-
+let size = 30;
 const createElements = (event) => {
   createBoxes(numbers.value);
 };
@@ -13,7 +13,7 @@ const destroyElements = (event) => {
 
 function createBoxes(amount) {
   let newElement = "";
-  let size = 30;
+
   for (let i = 1; i <= amount; i++) {
     newElement = `<div style="background-color: ${getRandomHexColor()}; width: ${size}px; height: ${size}px; margin-top: 3px"></div>`;
     boxElements.insertAdjacentHTML("beforeend", newElement);
@@ -23,6 +23,7 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxElements.innerHTML = "";
+  size = 30;
 }
 
 function getRandomHexColor() {
