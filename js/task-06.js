@@ -3,6 +3,9 @@ const xz = document.querySelector("[data-length]");
 
 const verification = (event) => {
   event.currentTarget.classList.add("invalid");
+  event.currentTarget.classList.contains("valid")
+    ? event.currentTarget.classList.remove("valid")
+    : "";
   if (
     event.currentTarget.value.length ===
     Number(event.currentTarget.dataset.length)

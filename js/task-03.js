@@ -18,9 +18,10 @@ const gallery = document.querySelector("ul.gallery");
 const element = images
   .map((image) => {
     const { url, alt } = image;
+
     return `<li class="gallery-item"><img class = "gallery-image"
      src=${url}
-     alt=${alt}></li>`;
+     alt='${alt}'></li>`;
   })
   .join("");
 
